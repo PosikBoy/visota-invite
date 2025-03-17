@@ -14,6 +14,8 @@ import Heading2 from "@/components/ui/Heading2/Heading2";
 import Paragraph from "@/components/ui/Paragraph/Paragraph";
 import Preferences from "./components/Preferences/Preferences";
 import Button from "./components/Button/Button";
+import { useEffect } from "react";
+import axios from "axios";
 
 interface IProps {
   fullNameId: string;
@@ -23,6 +25,12 @@ interface IProps {
 
 const MainPage = (props: IProps) => {
   const { fullNameId, fullName, isInvitationAccepted } = props;
+
+  useEffect(() => {
+    axios.post("/invite-seen", {
+      fullNameId: fullName,
+    });
+  }, []);
   return (
     <div className={styles.page}>
       <div className={styles.carouselWrapper}>
