@@ -97,8 +97,9 @@ const Preferences = () => {
             <Heading2 variant="blue">
               Все референсы можно найти по{" "}
               <a
-                href="#"
+                href="https://pin.it/fy0tBZE45"
                 style={{ color: "blue", textDecoration: "underline" }}
+                rel="nofollow"
               >
                 ссылке.
               </a>
