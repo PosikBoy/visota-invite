@@ -31,7 +31,7 @@ export async function POST(req: Request) {
 
     bot.sendMessage(
       CHAT_ID,
-      `Пользователь ${fullNameId} не принял приглашение`
+      `Пользователь ${fullNameId} не принял приглашение #отказ`
     );
 
     // Возвращаем успешный ответ

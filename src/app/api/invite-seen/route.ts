@@ -12,7 +12,7 @@ export async function POST(req: Request) {
 
     const bot = new TelegramBot(TELEGRAM_BOT_TOKEN);
 
-    bot.sendMessage(CHAT_ID, `Пользователь ${fullNameId} открыл приглашение`);
+    bot.sendMessage(CHAT_ID, `Пользователь ${fullNameId} открыл приглашение #открытие`);
 
     // Возвращаем успешный ответ
     return NextResponse.json(
