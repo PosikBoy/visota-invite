@@ -26,11 +26,6 @@ interface IProps {
 const MainPage = (props: IProps) => {
   const { fullNameId, fullName, isInvitationAccepted } = props;
 
-  useEffect(() => {
-    axios.post("/invite-seen", {
-      fullNameId: fullName,
-    });
-  }, []);
   return (
     <div className={styles.page}>
       <div className={styles.carouselWrapper}>

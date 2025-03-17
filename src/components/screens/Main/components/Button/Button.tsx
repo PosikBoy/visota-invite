@@ -2,7 +2,8 @@
 
 import invitationService from "@/services/invitation.service";
 import styles from "./Button.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Button = ({
   fullNameId,
@@ -21,8 +22,12 @@ const Button = ({
       setIsAccepted(true);
     }
   };
-  console.log(" sadcd", isInvitationAccepted, isAccepted);
 
+  useEffect(() => {
+    axios.post("/invite-seen", {
+      fullNameId: fullNameId,
+    });
+  }, []);
   return (
     <button onClick={handleClick} className={styles.formButton}>
       {isAccepted ? "Отказаться от приглашения" : "Принять приглашение"}
