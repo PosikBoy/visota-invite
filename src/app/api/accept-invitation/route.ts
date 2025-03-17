@@ -29,7 +29,10 @@ export async function POST(req: Request) {
       "UPDATE users SET is_invitation_accepted = ? WHERE full_name_id = ?"
     ).run("1", fullNameId);
 
-    bot.sendMessage(CHAT_ID, `Пользователь ${fullNameId} принял приглашение`);
+    bot.sendMessage(
+      CHAT_ID,
+      `Пользователь ${fullNameId} принял приглашение #принятие`
+    );
 
     // Возвращаем успешный ответ
     return NextResponse.json(

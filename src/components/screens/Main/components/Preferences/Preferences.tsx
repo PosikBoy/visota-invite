@@ -7,10 +7,10 @@ import Image, { StaticImageData } from "next/image";
 import Preference1 from "@/assets/images/color-1.png";
 import Preference2 from "@/assets/images/color-2.png";
 import Preference3 from "@/assets/images/color-3.png";
+import Preference4 from "@/assets/images/color-4.png";
 
 import { useEffect, useState } from "react";
 import clsx from "clsx";
-import Subtitle from "@/components/ui/Subtitle/Subtitle";
 import Heading from "@/components/ui/Heading/Heading";
 
 interface IItem {
@@ -34,6 +34,11 @@ const data: IItem[] = [
     id: 2,
     snippet: "Серебристый",
     image: Preference3,
+  },
+  {
+    id: 3,
+    snippet: "Белый",
+    image: Preference4,
   },
 ];
 
