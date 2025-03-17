@@ -1,0 +1,19 @@
+.subtitle {
+  font-size: 20px;
+
+  @media (min-width: 425px) {
+    font-size: 24px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 40px;
+  }
+}
+
+.variant-black {
+  color: var(--color-black);
+}
+
+.variant-white {
+  color: var(--color-white);
+}

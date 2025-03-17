@@ -1,0 +1,139 @@
+.page {
+  background-color: var(--color-ligth-blue);
+}
+
+.carouselWrapper {
+  position: relative;
+}
+.offerBlockContent {
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    max-width: initial;
+  }
+}
+
+.offerBlock {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media (min-width: 768px) {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.accent {
+  font-family: var(--font-caveat), sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--color-ligth-blue);
+  display: block;
+}
+
+.pageContent {
+  // margin-top: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info {
+  height: 100%;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding-bottom: 20px;
+  &Wrapper {
+    background-image: url("/background.png");
+    background-repeat: no-repeat; /* Отключает повторение */
+  }
+
+  &Heading {
+    text-align: center;
+  }
+
+  &Card {
+    border-radius: 20px;
+    background-color: var(--color-background-primary);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    overflow: hidden;
+    outline: 5px solid var(--color-white);
+  }
+
+  &Label {
+    border-radius: 20px;
+    padding: 20px;
+    background-color: var(--color-background-primary);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &TextContainer {
+    position: absolute;
+    background-color: var(--color-background-primary);
+    padding: 5px;
+    border-radius: 20px;
+    left: 0px;
+    right: 0px;
+  }
+
+  &ImageContainer {
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  &Row {
+    display: flex;
+    gap: 20px;
+  }
+
+  &MpguLogo {
+    width: 200px;
+    height: 200px;
+  }
+
+  &Text {
+    text-align: center;
+    font-size: 24px;
+  }
+}
+
+.questionHeading {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--color-background-primary);
+
+  border-radius: 20px;
+  margin-bottom: 150px;
+}
+
+.questionLink {
+  text-align: center;
+  color: #ffce2c;
+  text-decoration: none;
+}
+
+.buttons {
+  position: fixed;
+  bottom: 40px;
+  left: 0px;
+  right: 0px;
+  padding: 0px 20px;
+  width: 100%;
+}
