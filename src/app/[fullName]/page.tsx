@@ -1,3 +1,4 @@
+import PseudoParent from "@/components/contexts/PseudoParent";
 import Main from "@/components/screens/Main/Main";
 import axios from "axios";
 import { Metadata } from "next";
@@ -43,10 +44,12 @@ export default async function Home({
   );
 
   return (
-    <Main
-      fullNameId={user.data.full_name_id}
-      fullName={user.data.full_name}
-      isInvitationAccepted={user.data.is_invitation_accepted}
-    />
+    <PseudoParent fullNameId={fullName}>
+      <Main
+        fullNameId={user.data.full_name_id}
+        fullName={user.data.full_name}
+        isInvitationAccepted={user.data.is_invitation_accepted}
+      />
+    </PseudoParent>
   );
 }
