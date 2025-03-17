@@ -39,9 +39,7 @@ export default async function Home({
   params: Promise<{ fullName: string }>;
 }) {
   const { fullName } = await params;
-  const user = await axios.get<IResponse>(
-    `http://localhost:3000/api/user/${fullName}`
-  );
+  const user = await axios.get<IResponse>(`/api/user/${fullName}`);
 
   return (
     <PseudoParent fullNameId={fullName}>

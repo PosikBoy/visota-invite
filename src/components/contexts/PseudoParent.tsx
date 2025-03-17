@@ -12,7 +12,7 @@ const PseudoParent: FC<PropsWithChildren<IProps>> = ({
   children,
 }) => {
   useEffect(() => {
-    axios.post("/invite-seen", {
+    axios.post("/api/invite-seen", {
       fullNameId: fullNameId,
     });
   }, []);
