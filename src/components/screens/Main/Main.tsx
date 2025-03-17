@@ -1,21 +1,16 @@
 import Heading from "@/components/ui/Heading/Heading";
 import Carousel from "./components/Carousel/Carousel";
 import styles from "./Main.module.scss";
-import Subtitle from "@/components/ui/Subtitle/Subtitle";
 
-import AboutImage from "@/assets/images/about-1.png";
-import Preference3 from "@/assets/images/preference-3.png";
-import Carousel2 from "@/assets/images/carousel-2.png";
-
-import MpguLogo from "@/assets/images/mpgu-logo.png";
+import AboutImage from "@/assets/images/about-1.jpg";
+import Preference3 from "@/assets/images/preference-3.jpg";
+import Carousel2 from "@/assets/images/carousel-2.jpg";
 
 import Image from "next/image";
 import Heading2 from "@/components/ui/Heading2/Heading2";
 import Paragraph from "@/components/ui/Paragraph/Paragraph";
 import Preferences from "./components/Preferences/Preferences";
 import Button from "./components/Button/Button";
-import { useEffect } from "react";
-import axios from "axios";
 
 interface IProps {
   fullNameId: string;

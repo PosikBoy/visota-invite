@@ -7,6 +7,7 @@ import CarouselImage3 from "@/assets/images/carousel-3.png";
 import CarouselImage4 from "@/assets/images/carousel-4.png";
 import clsx from "clsx";
 import Image from "next/image";
+
 import { useEffect, useState } from "react";
 
 const images = [CarouselImage1, CarouselImage2, CarouselImage3, CarouselImage4];
@@ -16,7 +17,7 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 200000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, [images.length]);
