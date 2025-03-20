@@ -1,16 +1,18 @@
 import Heading from "@/components/ui/Heading/Heading";
-import Carousel from "./components/Carousel/Carousel";
 import styles from "./Main.module.scss";
-
-import AboutImage from "@/assets/images/about-1.jpg";
-import Preference3 from "@/assets/images/preference-3.jpg";
-import Carousel2 from "@/assets/images/carousel-2.jpg";
-
 import Image from "next/image";
+import MaskImage from "@/assets/images/mask.jpg";
+import Image2 from "@/assets/images/image2.jpg";
+import Image3 from "@/assets/images/image3.jpg";
+
+import Marquee from "@/components/shared/Marquee";
+import Subtitle from "@/components/ui/Subtitle/Subtitle";
 import Heading2 from "@/components/ui/Heading2/Heading2";
-import Paragraph from "@/components/ui/Paragraph/Paragraph";
-import Preferences from "./components/Preferences/Preferences";
-import Button from "./components/Button/Button";
+import clsx from "clsx";
+import { useState } from "react";
+import axios from "axios";
+import invitationService from "@/services/invitation.service";
+import AcceptButton from "./components/Button";
 
 interface IProps {
   fullNameId: string;
@@ -23,98 +25,132 @@ const MainPage = (props: IProps) => {
 
   return (
     <div className={styles.page}>
-      <div className={styles.carouselWrapper}>
-        <Carousel />
-        <section className={styles.offerBlock}>
-          <div className="container">
-            <div className={styles.offerBlockContent}>
-              <Heading variant="white">Привет, {fullName}!</Heading>
-              <Heading2 variant="white">
-                Рады пригласить тебя на открытый день рождения{" "}
-                <span className={styles.accent}>СПО «Высота»</span>
-              </Heading2>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <main className={styles.pageContent}>
-        <section className={styles.infoWrapper}>
-          <div className="container">
-            <div className={styles.info}>
-              <div className={styles.infoLabel}>
-                <Paragraph variant="white">
-                  Мероприятие состоится 5 апреля по адресу{" "}
-                  <a
-                    href="https://yandex.ru/maps/-/CHFjnVzD"
-                    title="Ссылка на адрес"
-                  >
-                    Грайвороновская улица, 25с8
-                  </a>{" "}
-                  с 16:00.
-                </Paragraph>
-              </div>
-              <Paragraph variant="white" className={styles.infoText}>
-                Вечер будет очень высокий и интересный
-              </Paragraph>
-
-              <div className={styles.infoCard}>
-                <div className={styles.infoTextContainer}>
-                  <p className={styles.infoText}>Развлекательная программа</p>
-                </div>
-                <div className={styles.infoImageContainer}>
-                  <Image
-                    src={AboutImage}
-                    alt="СПО Высота"
-                    className={styles.infoImage}
-                  />
-                </div>
-              </div>
-              <div className={styles.infoCard}>
-                <div className={styles.infoTextContainer}>
-                  <p className={styles.infoText}>Встреча с давними друзьями</p>
-                </div>
-                <div className={styles.infoImageContainer}>
-                  <Image
-                    src={Preference3}
-                    alt="СПО Высота"
-                    className={styles.infoImage}
-                  />
-                </div>
-              </div>
-              <div className={styles.infoCard}>
-                <div className={styles.infoTextContainer}>
-                  <p className={styles.infoText}>Уютная атмосфера</p>
-                </div>
-                <div className={styles.infoImageContainer}>
-                  <Image
-                    src={Carousel2}
-                    alt="СПО Высота"
-                    className={styles.infoImage}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <Preferences />
-
+      <div className={styles.mainBlock}>
+        <div className={styles.marqueeContainer}>
+          <Marquee text="Приглашение" />
+        </div>
         <div className="container">
-          <div className={styles.question}>
-            <Heading2 className={styles.questionHeading} variant="white">
-              Будем очень рады видеть именно{" "}
-              <span className={styles.questionLink}> тебя</span> у нас в гостях.
-              Именно поэтому просим сообщить, сможешь ли ты присутствовать. Не
-              забудь про подарок :) До встречи 🕊️
-            </Heading2>
+          <div className={styles.mainBlockContent}>
+            <Heading>СПО "Высота"</Heading>
+
+            <div className={styles.mainBlockImage}>
+              <Image src={MaskImage} alt="Картинка маски" />
+            </div>
+
+            <div className={styles.invitation}>
+              <Heading2>{`Привет,`}</Heading2>
+              <Heading2>{` ${fullName}`}</Heading2>
+              <Subtitle className={styles.invitationText}>
+                Рады пригласить тебя на открытый день рождения СПО «Высота» 🤍
+              </Subtitle>
+              <Subtitle className={styles.invitationText}>
+                Этот день будет высоким, оставит тебе незабываемые эмоции и
+                приятные воспоминания!
+              </Subtitle>
+            </div>
           </div>
         </div>
-      </main>
-      <div className={styles.buttons}>
-        <Button
-          fullNameId={fullNameId}
-          isInvitationAccepted={isInvitationAccepted}
-        />
+      </div>
+      <div className={styles.secondBlock}>
+        <div className={styles.secondBlockGrid}>
+          <div className={styles.secondBlockContent}>
+            <div className={styles.secondBlockImage}>
+              <Image src={Image2} alt="asjdc" fill />
+            </div>
+          </div>
+          <div
+            className={clsx(
+              styles.secondBlockContent,
+              styles.secondBlockTexted
+            )}
+          >
+            <Heading2 variant="white" className={styles.whenTitle}>
+              Когда?
+            </Heading2>
+            <Subtitle variant="white" className={styles.whenText}>
+              5 апреля 2025 года
+            </Subtitle>
+          </div>
+          <div
+            className={clsx(
+              styles.secondBlockContent,
+              styles.secondBlockTexted
+            )}
+          >
+            <Heading2 variant="white" className={styles.whenTitle}>
+              Где?
+            </Heading2>
+            <Subtitle variant="white" className={styles.whenText}>
+              <a
+                href="https://yandex.ru/maps/-/CHFjnVzD"
+                title="Ссылка на адрес"
+              >
+                Грайвороновская улица, 25с8
+              </a>
+            </Subtitle>
+          </div>
+          <div className={styles.secondBlockContent}>
+            <div className={styles.secondBlockImage}>
+              <Image src={Image3} alt="asjdc" fill />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.thirdBlockWrapper}>
+        <div className="container">
+          <div className={styles.thirdBlock}>
+            <Heading2 className={styles.thirdBlockTitle}>
+              О программе мероприятия
+            </Heading2>
+            <p className={styles.thirdBlockStartTime}>16:00 Сбор гостей</p>
+            <p className={styles.thirdBlockStartTime}>16:45 Начало</p>
+            <p className={styles.thirdBlockStartTime}>20:00 Конец</p>
+            <p className={styles.thirdBlockStartTime}>20:40 Прощаемся</p>
+            <Subtitle className={styles.thirdBlockText}>
+              Программа будет очень насыщенная и интересная, советуем не
+              опаздывать, чтобы максимально насладиться духом нашего праздника.{" "}
+            </Subtitle>
+          </div>
+        </div>
+      </div>
+      <div className={styles.fourthBlockWrapper}>
+        <div className="container">
+          <div className={styles.fourthBlock}>
+            <Heading2 variant="black" className={styles.fourthBlockTitle}>
+              О дресс-коде
+            </Heading2>
+
+            <Subtitle variant="black" className={styles.fourthBlockText}>
+              Тематика дня рождения — высокое общество. Вечерние образы будут
+              выглядеть очень кстати! А также не забудь запастись карнавальной
+              маской. Палитра праздника ориентирована на голубой, синий,
+              серебристый и белый.
+            </Subtitle>
+            <Subtitle variant="black" className={styles.fifthBlockText}>
+              Все референсы можно найти по{" "}
+              <a href="https://pin.it/fy0tBZE45" rel="nofollow">
+                ссылке.
+              </a>
+            </Subtitle>
+          </div>
+        </div>
+      </div>
+      <div className={styles.fifthBlockWrapper}>
+        <div className={styles.fifthBlock}>
+          <Heading2 variant="black" className={styles.fifthhBlockTitle}>
+            Ты придешь?
+          </Heading2>
+
+          <Subtitle variant="black" className={styles.fifthBlockText}>
+            Будем очень рады видеть именно тебя у нас в гостях. Именно поэтому
+            просим сообщить, сможешь ли ты присутствовать. И не забудь подарок!
+          </Subtitle>
+          <AcceptButton
+            fullName={fullName}
+            fullNameId={fullNameId}
+            isInvitationAccepted={isInvitationAccepted}
+          />
+        </div>
       </div>
     </div>
   );

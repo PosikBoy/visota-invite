@@ -36,7 +36,7 @@ export async function POST(req: Request) {
 
     // Возвращаем успешный ответ
     return NextResponse.json(
-      { message: "Приглашение успешно принято" },
+      { message: "Приглашение успешно отказано" },
       { status: 200 }
     );
   } catch (error) {

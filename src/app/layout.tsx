@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Pangolin, Caveat } from "next/font/google";
+import { Poiret_One, Bellota } from "next/font/google";
 import "./globals.scss";
 
-const pangolinSans = Pangolin({
+const pangolinSans = Poiret_One({
   weight: ["400"],
   subsets: ["latin"],
-  variable: "--font-pangolin-sans",
+  variable: "--font-poiret-one-sans",
 });
 
-const caveat = Caveat({
+const caveat = Bellota({
   weight: ["400"],
   subsets: ["latin"],
-  variable: "--font-caveat",
+  variable: "--font-bellota",
 });
 
 export const metadata: Metadata = {

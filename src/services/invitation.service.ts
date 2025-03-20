@@ -9,7 +9,7 @@ class InvitationService {
           fullNameId: fullNameId,
         }
       );
-      return result.data.message;
+      return result.data;
     } catch (error) {
       console.log(error);
     }
@@ -22,7 +22,7 @@ class InvitationService {
           fullNameId: fullNameId,
         }
       );
-      return result.data.message;
+      return result.data;
     } catch (error) {
       console.log(error);
     }
