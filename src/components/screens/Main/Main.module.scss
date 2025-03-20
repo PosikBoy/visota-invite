@@ -200,3 +200,28 @@
   color: var(--color-black);
   font-size: 18px;
 }
+
+.anotherDevice {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &Text {
+    font-size: 40px;
+    font-family: var(--font-bellota);
+    font-weight: 700;
+    text-align: center;
+  }
+
+  @media (max-width: 500px) {
+    & {
+      display: none;
+    }
+  }
+}

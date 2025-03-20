@@ -152,6 +152,11 @@ const MainPage = (props: IProps) => {
           />
         </div>
       </div>
+      <div className={styles.anotherDevice}>
+        <Heading2 className={styles.anotherDeviceText}>
+          Открой приглашение с телефона, пожалуйста!
+        </Heading2>
+      </div>
     </div>
   );
 };
