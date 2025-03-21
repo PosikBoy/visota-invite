@@ -1,17 +1,14 @@
 import Heading from "@/components/ui/Heading/Heading";
 import styles from "./Main.module.scss";
 import Image from "next/image";
-import MaskImage from "@/assets/images/mask.jpg";
-import Image2 from "@/assets/images/image2.jpg";
-import Image3 from "@/assets/images/image3.jpg";
-
+import MaskImage from "@/assets/images/main.png";
+import Image2 from "@/assets/images/image1.png";
+import Image3 from "@/assets/images/mask.jpg";
+import WeImage from "@/assets/images/we.jpg";
 import Marquee from "@/components/shared/Marquee";
 import Subtitle from "@/components/ui/Subtitle/Subtitle";
 import Heading2 from "@/components/ui/Heading2/Heading2";
 import clsx from "clsx";
-import { useState } from "react";
-import axios from "axios";
-import invitationService from "@/services/invitation.service";
 import AcceptButton from "./components/Button";
 
 interface IProps {
@@ -55,7 +52,7 @@ const MainPage = (props: IProps) => {
         <div className={styles.secondBlockGrid}>
           <div className={styles.secondBlockContent}>
             <div className={styles.secondBlockImage}>
-              <Image src={Image2} alt="asjdc" fill />
+              <Image src={Image2} alt="asjdc" fill quality={100} />
             </div>
           </div>
           <div
@@ -91,11 +88,12 @@ const MainPage = (props: IProps) => {
           </div>
           <div className={styles.secondBlockContent}>
             <div className={styles.secondBlockImage}>
-              <Image src={Image3} alt="asjdc" fill />
+              <Image src={Image3} alt="asjdc" fill quality={100} />
             </div>
           </div>
         </div>
       </div>
+
       <div className={styles.thirdBlockWrapper}>
         <div className="container">
           <div className={styles.thirdBlock}>
@@ -105,7 +103,6 @@ const MainPage = (props: IProps) => {
             <p className={styles.thirdBlockStartTime}>16:00 Сбор гостей</p>
             <p className={styles.thirdBlockStartTime}>16:45 Начало</p>
             <p className={styles.thirdBlockStartTime}>20:00 Конец</p>
-            <p className={styles.thirdBlockStartTime}>20:40 Прощаемся</p>
             <Subtitle className={styles.thirdBlockText}>
               Программа будет очень насыщенная и интересная, советуем не
               опаздывать, чтобы максимально насладиться духом нашего праздника.{" "}
@@ -113,20 +110,21 @@ const MainPage = (props: IProps) => {
           </div>
         </div>
       </div>
+
       <div className={styles.fourthBlockWrapper}>
         <div className="container">
           <div className={styles.fourthBlock}>
-            <Heading2 variant="black" className={styles.fourthBlockTitle}>
+            <Heading2 variant="white" className={styles.fourthBlockTitle}>
               О дресс-коде
             </Heading2>
 
-            <Subtitle variant="black" className={styles.fourthBlockText}>
+            <Subtitle variant="white" className={styles.fourthBlockText}>
               Тематика дня рождения — высокое общество. Вечерние образы будут
               выглядеть очень кстати! А также не забудь запастись карнавальной
               маской. Палитра праздника ориентирована на голубой, синий,
               серебристый и белый.
             </Subtitle>
-            <Subtitle variant="black" className={styles.fifthBlockText}>
+            <Subtitle variant="white" className={styles.fourthBlockText}>
               Все референсы можно найти по{" "}
               <a href="https://pin.it/fy0tBZE45" rel="nofollow">
                 ссылке.
@@ -135,6 +133,8 @@ const MainPage = (props: IProps) => {
           </div>
         </div>
       </div>
+      <Image src={WeImage} alt="asjdc" quality={100} />
+
       <div className={styles.fifthBlockWrapper}>
         <div className={styles.fifthBlock}>
           <Heading2 variant="black" className={styles.fifthhBlockTitle}>

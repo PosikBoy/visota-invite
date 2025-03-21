@@ -27,6 +27,10 @@
     overflow: hidden;
     border-radius: 130px 130px 0 0;
     margin-top: 60px;
+    & img {
+      object-fit: cover;
+      height: 400px;
+    }
   }
 }
 
@@ -61,22 +65,7 @@
 
     position: relative;
 
-    background: radial-gradient(
-        ellipse farthest-corner at right bottom,
-        #fedb37 0%,
-        #fdb931 8%,
-        #9f7928 30%,
-        #8a6e2f 40%,
-        transparent 80%
-      ),
-      radial-gradient(
-        ellipse farthest-corner at left top,
-        #ffffff 0%,
-        #ffffac 8%,
-        #d1b464 25%,
-        #5d4a1f 62.5%,
-        #5d4a1f 100%
-      );
+    background: url("/gradient.jpg") no-repeat;
   }
   .whenText {
     position: absolute;
@@ -136,18 +125,23 @@
     margin-top: 20px;
 
     width: 100%;
-    background-color: #f2ffb6;
+    background-color: #265989;
   }
   &Title {
     display: block;
     width: 100%;
     line-height: 150%;
     text-align: center;
+    color: var(--color-white);
   }
 
   &Text {
     font-size: 20px;
-    color: var(--color-black);
+    color: var(--color-white);
+    a {
+      color: var(--color-white);
+      text-decoration: underline;
+    }
   }
 }
 
@@ -160,24 +154,10 @@
   padding: 30px;
   background: var(--color-white);
   border-radius: 40px;
+
   &Wrapper {
     width: 100%;
-    background: radial-gradient(
-        ellipse farthest-corner at right bottom,
-        #fedb37 0%,
-        #fdb931 8%,
-        #9f7928 30%,
-        #8a6e2f 40%,
-        transparent 80%
-      ),
-      radial-gradient(
-        ellipse farthest-corner at left top,
-        #ffffff 0%,
-        #ffffac 8%,
-        #d1b464 25%,
-        #5d4a1f 62.5%,
-        #5d4a1f 100%
-      );
+    background: #9dc5ea;
     padding: 20px;
   }
 
@@ -185,8 +165,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #d1b464;
-    color: var(--color-black);
+    background-color: #9dc5ea;
+    color: var(--color-white);
     height: 40px;
     width: 100%;
 

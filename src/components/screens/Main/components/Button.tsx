@@ -22,7 +22,7 @@ const AcceptButton = ({
     try {
       const result = await invitationService.acceptInvitation(fullNameId);
       if (result?.message === "Приглашение успешно принято") {
-        setIsSuccess(`Спасибо за ответ, ${fullName}, мы будем теб ждать!`);
+        setIsSuccess(`Спасибо за ответ, ${fullName}, мы будем тебя ждать!`);
         setIsAccepted(true);
       }
     } catch (error) {
