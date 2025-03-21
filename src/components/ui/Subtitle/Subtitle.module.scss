@@ -8,12 +8,22 @@
   @media (min-width: 768px) {
     font-size: 40px;
   }
+
+  a {
+    text-decoration: underline;
+  }
 }
 
 .variant-black {
   color: var(--color-black);
+  a {
+    color: var(--color-black);
+  }
 }
 
 .variant-white {
   color: var(--color-white);
+  a {
+    color: var(--color-white);
+  }
 }

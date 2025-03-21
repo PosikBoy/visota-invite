@@ -36,7 +36,7 @@ const AcceptButton = ({
       console.log(result?.message == "Приглашение успешно отказано");
       if (result?.message == "Приглашение успешно отказано") {
         setIsSuccess(
-          `Грустно, что ты передумал, если передумаешь еще раз - можешь смело отмечаться кнопкой ниже!`
+          `Грустно, что ты передумал. Если все-таки сможешь - зайди сюда заново и отметься, спасибо!`
         );
 
         setIsAccepted(false);
@@ -49,12 +49,14 @@ const AcceptButton = ({
   return (
     <>
       {isSuccess && <p className={styles.successMessage}>{isSuccess}</p>}
-      <button
-        className={styles.fifthBlockButton}
-        onClick={isAccepted ? denyInvitation : acceptInvitation}
-      >
-        {isAccepted ? "Я не приду :(" : "Я  приду!"}
-      </button>
+      {!isSuccess && (
+        <button
+          className={styles.fifthBlockButton}
+          onClick={isAccepted ? denyInvitation : acceptInvitation}
+        >
+          {isAccepted ? "Я передумал, не смогу прийти" : "Я  приду!"}
+        </button>
+      )}
     </>
   );
 };
